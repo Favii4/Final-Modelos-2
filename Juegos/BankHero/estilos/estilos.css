@@ -1,0 +1,68 @@
+canvas {
+	background-color: #000000;
+}
+
+img {
+	display: none;
+}
+
+/* Button */
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-o-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out;
+		-o-transition: background-color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out;
+		background: #3ac984;
+		border-radius: 40px;
+		border: 0;
+		color: white;
+		cursor: pointer;
+		display: inline-block;
+		padding: 0.80em 2em;
+		text-align: center;
+		text-decoration: none;
+		font-size: 1.4em;
+		font-weight: 600;
+		min-width: 10em;
+	}
+
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		.button:hover {
+			background-color: #32b777;
+		}
+
+		input[type="submit"].fit,
+		input[type="reset"].fit,
+		input[type="button"].fit,
+		.button.fit {
+			width: 100%;
+		}
+
+		input[type="submit"].small,
+		input[type="reset"].small,
+		input[type="button"].small,
+		.button.small {
+			font-size: 0.8em;
+		}
+		.datos nav ul{
+			  list-style: none;
+			  background: #34495E;
+			  text-align: center;
+			  border-radius: 50px;
+			  padding: 8px;
+			}
+
+		.datos nav ul label{
+			color: white;
+		}

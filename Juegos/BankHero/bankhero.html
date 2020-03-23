@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+	<head>
+		<meta charset="utf-8">
+
+		<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="../../js/initFirebase.js"></script>
+		<script src="scripts/crudFirebase.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="estilos/estilos.css" media="screen">
+		<script src="scripts/jquery.js" languaje="Javascript"></script>
+		<script src="scripts/script.js" languaje="Javascript"></script>
+		<script src="scripts/boton.js" languaje="Javascript"></script>
+		<script src="scripts/morraco.js" languaje="Javascript"></script>
+		<script src="scripts/ladron.js" languaje="Javascript"></script>
+		<script src="scripts/policia.js" languaje="Javascript"></script>
+		<script src="scripts/cliente.js" languaje="Javascript"></script>
+		<script src="scripts/asistente.js" languaje="Javascript"></script>
+		<script src="scripts/mesa.js" languaje="Javascript"></script>
+		<script src="scripts/pedido.js" languaje="Javascript"></script>
+		<script src="scripts/cola.js" languaje="Javascript"></script>
+
+		<title>Bank Hero</title>
+
+	</head>
+
+	<body style="background-color: #d9e1e3">
+
+		<section>
+			<center>
+
+				<div class="datos">
+					<nav>
+						<ul>
+							<label for="1"> Ingrese el nombre</label>
+							<input type="text" placeholder="Nombre" id="nombreUsuario">
+							<input type="submit" name="" value="Enviar" onclick="guardarNombreUsuario()">
+						</ul>
+					</nav>
+				</div>
+
+				<canvas id="lienzo" width="1124" height="622">
+					Error, el navegador no soporta canvas.
+				</canvas>
+
+				<nav>
+					<ul>
+						<a href="../../dash.html" class="button alt">Regresar a juegos friv UD</a>
+						<a href="../../dash.html" class="button alt" onclick="insertarPuntaje()">Guardar puntaje</a>
+					</ul>
+				</nav>
+
+			</center>
+		</section>
+
+	<img id="fondo" src="img/fondo.png">
+	<img id="gameOver" src="img/gameOver.png">
+	<img id="mesa" src="img/mesa.png">
+	<img id="mesaSelecta" src="img/mesaSelecta.png">
+	<img id="flechita" src="img/flechita.png">
+	<img id="cliente1" src="img/cliente1.png">
+	<img id="cliente2" src="img/cliente2.png">
+	<img id="cliente3" src="img/cliente3.png">
+	<img id="asistente1" src="img/asistente1.png">
+	<img id="asistente2" src="img/asistente2.png">
+	<img id="asistente3" src="img/asistente3.png">
+	<img id="corazon" src="img/corazon.png">
+	<img id="corazonMuerto" src="img/corazonMuerto.png">
+	<img id="fondoMenu" src="img/fondoMenu.png">
+	<img id="boton" src="img/boton.png">
+	<img id="botonSelecto" src="img/botonSelecto.png">
+	<img id="frenteDer" src="img/frenteDer.png">
+	<img id="frenteIzq" src="img/frenteIzq.png">
+	<img id="mesita" src="img/mesita.png">
+	<img id="globo" src="img/globo.png">
+	<img id="papeles" src="img/papeles.png">
+	<img id="recibo" src="img/recibo.png">
+	<img id="papelH" src="img/papelH.png">
+	<img id="dinero" src="img/dinero.png">
+	<img id="carta" src="img/carta.png">
+	<img id="masterCard" src="img/masterCard.png">
+	<img id="ladron" src="img/ladron.png">
+	<img id="ladron1" src="img/ladron1.png">
+	<img id="policia" src="img/policia.png">
+	<img id="cadaver" src="img/cadaver.png">
+	<img id="croquis" src="img/croquis.png">
+	<img id="lanzacohetes" src="img/lanzacohetes.png">
+	<img id="basuca" src="img/basuca.png">
+	<img id="misilDer" src="img/misilDer.png">
+	<img id="misilIzq" src="img/misilIzq.png">
+	<img id="explosion1" src="img/explosion1.png">
+	<img id="explosion2" src="img/explosion2.png">
+	<img id="explosion3" src="img/explosion3.png">
+	<img id="explosion4" src="img/explosion4.png">
+	<img id="explosion5" src="img/explosion5.png">
+	<img id="explosion6" src="img/explosion6.png">
+	<img id="explosion7" src="img/explosion7.png">
+	<img id="explosion8" src="img/explosion8.png">
+	<img id="fondoBug" src="img/fondoBug.png">
+	<img id="fondoBug1" src="img/fondoBug1.png">
+	<img id="fondoBug2" src="img/fondoBug2.png">
+	<img id="basura" src="img/basurita.png">
+
+	<img id="instruccion1" src="img/instruccion1.png">
+	<img id="instruccion2" src="img/instruccion2.png">
+	<img id="instruccion3" src="img/instruccion3.png">
+	<img id="instruccion4" src="img/instruccion4.png">
+	<img id="instruccion5" src="img/instruccion5.png">
+	<img id="instruccion6" src="img/instruccion6.png">
+	<img id="instruccion7" src="img/instruccion7.png">
+	<img id="instruccion8" src="img/instruccion8.png">
+	<img id="instruccion9" src="img/instruccion9.png">
+	<img id="instruccion10" src="img/instruccion10.png">
+
+	<img id="btnAtras" src="img/btnAtras.png">
+	<img id="btnSiguiente" src="img/btnSiguiente.png">
+	<img id="btnAtrasSelecto" src="img/btnAtrasSelecto.png">
+	<img id="btnSiguienteSelecto" src="img/btnSiguienteSelecto.png">
+	<img id="btnMenu" src="img/btnMenu.png">
+	<img id="btnMenuSelecto" src="img/btnMenuSelecto.png">
+	<img id="capataz" src="img/capataz.png">
+
+	<audio id="cambiarBoton" src="sonidos/cambiarBoton.mp3">
+	<audio id="menuSonido" src="sonidos/menuSonido.mp3">
+	<audio id="fail" src="sonidos/fail.mp3">
+	<audio id="sonidoJuego2" src="sonidos/sonidoJuego2.mp3">
+	<audio id="cogerItem" src="sonidos/cogerItem.mp3">
+	<audio id="sentarCliente" src="sonidos/sentarCliente.mp3">
+	<audio id="error" src="sonidos/error.mp3">
+	<audio id="explosion" src="sonidos/explosion.mp3">
+	<audio id="llegadaCliente" src="sonidos/llegadaCliente.mp3">
+	<audio id="llegaLadron" src="sonidos/llegaLadron.mp3">
+	<audio id="pagar" src="sonidos/pagar.mp3">
+	<audio id="disparo" src="sonidos/disparo.mp3">
+	<audio id="entregar" src="sonidos/entregar.mp3">
+	<audio id="suspenso" src="sonidos/suspenso.mp3">
+	<audio id="grito" src="sonidos/grito.mp3">
+
+	</body>
+</html>
