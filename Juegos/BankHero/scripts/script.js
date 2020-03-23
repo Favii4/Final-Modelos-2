@@ -9,7 +9,7 @@ function inicio() {
 	imgInstrucciones = $("#instruccion1")[0];
 	imgBug = $("#fondoBug")[0];
 
-	$("#menuSonido")[0].play();
+	// $("#menuSonido")[0].play();
 	contexto = lienzo.getContext("2d");
 	buffer = document.createElement("canvas");
 	buffer.width = lienzo.width;
@@ -101,9 +101,9 @@ function inicio() {
 
 
 function nuevoJuego(){
-	$("#menuSonido")[0].pause();
+	// $("#menuSonido")[0].pause();
 	$("#sonidoJuego2")[0].currentTime = 0;
-	$("#sonidoJuego2")[0].play();
+	// $("#sonidoJuego2")[0].play();
 	vida = 5;
 	puntaje = 0;
 	velocidadJuego = 0;
@@ -231,7 +231,7 @@ function berificarGameOver(){
 		isInGameOver = true;
 		isInInstructions = false;
 		isInExit = false;
-		$("#sonidoJuego2")[0].pause();
+		// $("#sonidoJuego2")[0].pause();
 		$("#fail")[0].currentTime = 0;
 		$("#fail")[0].play();
 		return
@@ -810,7 +810,7 @@ function eventos(event){
 								bug = 0;
 								boton[4].x = 330;
 								bugs();
-								$("#menuSonido")[0].pause();
+								// $("#menuSonido")[0].pause();
 								$("#menuSonido")[0].currentTime = 0;
 								$("#suspenso")[0].currentTime = 0;
 								$("#suspenso")[0].play();
@@ -912,7 +912,7 @@ function eventos(event){
 					boton[3].isSelecto = true;
 					$("#fail")[0].pause();
 					$("#menuSonido")[0].currentTime = 0;
-					$("#menuSonido")[0].play();
+					// $("#menuSonido")[0].play();
 					isInMenu = true;
 					isInGame = false;
 					isInGameOver = false;
