@@ -1,73 +1,84 @@
 <!DOCTYPE html>
 <html lang='es'>
+
 <head>
 	<meta charset='utf-8'>
 	<title>plataformas</title>
+	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../../js/initFirebase.js"></script>
+	<script src="js/crudFirebase.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Jura:400,600' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-			<div class="">
-				<center>
-				<div id="info" class='screen'>
-					<img src="imgs/personajeF.png" class='p'>
-					<div clas="datos">
+	<div class="">
+		<center>
+			<div id="info" class='screen'>
+				<img src="imgs/personajeF.png" class='p'>
+				<div clas="datos">
 					<h1>Monster Space</h1>
-						<button class="btn start" id='otro'>Iniciar</button>
-						<p>
-							<h3>Instrucciones de juego</h3>
-							<p>Mueves al personaje con las flechas</p>
-							<p>Saltas con la flecha hacia arriba</p>
+					<button class="btn start" id='otro'>Iniciar</button>
+					<p>
+						<h3>Instrucciones de juego</h3>
+						<p>Mueves al personaje con las flechas</p>
+						<p>Saltas con la flecha hacia arriba</p>
 
-							<nav>
-									<label for="1"> Ingrese el nombre</label>
-									<input type="text" placeholder="Nombre" id="1">
-									<input type="submit" name="" value="Enviar">
-							</nav> <br>
+						<nav>
+							<label for="1"> Ingrese el nombre</label>
+							<input type="text" placeholder="Nombre" id="nombreUsuario"
+								>
+							<input type="submit" name="" value="Enviar" onclick=" guardarNombreUsuario()">
+						</nav> <br>
 
-						</p>
-					 </div>
+					</p>
 				</div>
 			</div>
+	</div>
 
-			<div id="win" class='screen'>
-	    	<img src="imgs/personajeF.png" class='p'>
-	    	<div class="datos">
-	    		<h1>GANASTE!</h1>
-	    		<button class="btn start" id= 'otro'>Juego de nuevo</button>
-	    		<p>
-	    			<h3>Puntaje</h3>
-	    			<p id='score'></p>
-	    		</p>
-	    	</div>
-	    </div>
+	<div id="win" class='screen'>
+		<img src="imgs/personajeF.png" class='p'>
+		<div class="datos">
+			<h1>GANASTE!</h1>
+			<button class="btn start" id='otro'>Juego de nuevo</button>
+			<p>
+				<h3>Puntaje</h3>
+				<p id='score'></p>
+			</p>
+		</div>
+	</div>
 
-			<div class="">
-				<center>
-					<div id="lose" class='screen'>
-			    <img src="imgs/personajeF.png" class='p'>
-			    	<div class="datos">
-			    		<h1>Perdiste</h1>
-			    		<p>Quieres intenarlo de nuevo?</p>
-			    		<button class="btn start" id='algo'>Reintentar</button>
-			    		<p>
-			    			<h3>Instrucciones del juego</h3>
-			    			<p>Mueves al personaje con las flechas</p>
-			    			<p>Saltas con la flecha hacia arriba</p>
-			    		</p>
-			    	</div>
-			    </div>
+	<div class="">
+		<center>
+			<div id="lose" class='screen'>
+				<img src="imgs/personajeF.png" class='p'>
+				<div class="datos">
+					<h1>Perdiste</h1>
+					<p>Quieres intenarlo de nuevo?</p>
+					<button class="btn start" id='algo'>Reintentar</button>
+					<p>
+						<h3>Instrucciones del juego</h3>
+						<p>Mueves al personaje con las flechas</p>
+						<p>Saltas con la flecha hacia arriba</p>
+					</p>
+				</div>
 			</div>
+	</div>
 
 
-			<nav>
-				<ul>
-					<a href="../../dash.html" class="button alt">Regresar a juegos friv UD</a>
-				</ul>
-			</nav>
+	<nav>
+		<ul>
+			<a href="../../dash.html" class="button alt">Regresar a juegos friv UD</a>
 
-<div id="game" style="display:none;">
+		</ul>
+		<ul>
+			<a class="button alt" onclick="insertarPuntaje()">Guardar puntaje</a>
+		</ul>
+	</nav>
+
+	<div id="game" style="display:none;">
 
 	</div>
 	<script src='js/preloadjs-0.1.0.min.js'></script>
@@ -81,39 +92,45 @@
 	<script src='js/game.js'></script>
 	<script src='js/main.js'></script>
 	<script>
-	var p;
-	 var imgsAssets = ['imgs/Heroe.png','imgs/enemy.png','imgs/moneda.png','imgs/pattern.png','imgs/puerta.png', 'imgs/llave.png','imgs/fondo.jpg'];
-	 window.addEventListener('load', function(){
-        p = new PreloadJS();
-        p.onProgress = progresoCarga;
-        cargar();
-        var iniciadores = document.getElementsByClassName('start');
-        for(i in iniciadores){
-        	var boton = iniciadores[i];
-        	if(boton.addEventListener)
-        		boton.addEventListener('click',iniciarJuego);
-        }
-	 });
-	 function cargar(){
-	 	while(imgsAssets.length > 0){
-	 		var url= imgsAssets.shift();
-	 		p.loadFile(url);
-	 	}
-	 }
-	 function progresoCarga(){
-	 	if (p.progress == 1){
-	 		//nivelUno();
-	 		document.querySelector('#info').style.display = 'block';
-	 	}
-	 }
-	 function iniciarJuego(){
-	 	document.querySelector('#info').style.display = 'none';
-	 	document.querySelector('#lose').style.display = 'none';
-	 	document.querySelector('#win').style.display = 'none';
-	 	document.querySelector('#game').style.display = 'block';
-	 	nivelUno();
-	 }
+		var p;
+		var imgsAssets = ['imgs/Heroe.png', 'imgs/enemy.png', 'imgs/moneda.png', 'imgs/pattern.png', 'imgs/puerta.png',
+			'imgs/llave.png', 'imgs/fondo.jpg'
+		];
+		window.addEventListener('load', function () {
+			p = new PreloadJS();
+			p.onProgress = progresoCarga;
+			cargar();
+			var iniciadores = document.getElementsByClassName('start');
+			for (i in iniciadores) {
+				var boton = iniciadores[i];
+				if (boton.addEventListener)
+					boton.addEventListener('click', iniciarJuego);
+			}
+		});
+
+		function cargar() {
+			while (imgsAssets.length > 0) {
+				var url = imgsAssets.shift();
+				p.loadFile(url);
+			}
+		}
+
+		function progresoCarga() {
+			if (p.progress == 1) {
+				//nivelUno();
+				document.querySelector('#info').style.display = 'block';
+			}
+		}
+
+		function iniciarJuego() {
+			document.querySelector('#info').style.display = 'none';
+			document.querySelector('#lose').style.display = 'none';
+			document.querySelector('#win').style.display = 'none';
+			document.querySelector('#game').style.display = 'block';
+			nivelUno();
+		}
 	</script>
 	<script src='js/main.js'></script>
 </body>
+
 </html>

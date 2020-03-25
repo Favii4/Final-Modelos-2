@@ -430,6 +430,8 @@ function detectarColPlataformas(){
 
 function actualizarTexto(){
   puntaje.setText('puntaje: '+juego.puntaje)
+  //asigna puntaje a variable global de puntaje
+  puntajeTotal = juego.puntaje;
 }
  
 addkeyBoardEvents();

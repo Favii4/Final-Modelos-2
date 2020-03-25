@@ -4,10 +4,11 @@ var puntajesBank = [];
 function initApp() {
 
     cargarPuntajesBank()
+    cargarPuntajesSpace()
 }
 
 function cargarPuntajesBank() {
-    ///Student information is obtained
+    ///User information is obtained
     var infoPuntBank = firebase.database().ref().child("bankHero")
     var infoPuntBankPromise = infoPuntBank.on('value', function (snapshot) {
 
@@ -55,6 +56,55 @@ function cargarPuntajesBank() {
     });
 }
 
+function cargarPuntajesSpace() {
+    ///User information is obtained
+    var infoPuntSpace = firebase.database().ref().child("monsterSpace")
+    var infoPuntSpacePromise = infoPuntSpace.on('value', function (snapshot) {
+
+        var puntajes= []
+        var obj = new Object();
+        var dataComplete = [];
+        var info = (snapshot.val())
+        //  var objStudent = new Object();
+        //  studentList = [];
+        var puntajeAlto = 0;
+        var nombrePuntajeAlto = "";
+
+        snapshot.forEach(function (child) {
+
+            
+            var nombre = child.key
+
+            obj.nombre = nombre;
+            
+
+            child.forEach(function (childMin) {
+
+                obj.fecha = unixToTimeStampOurTimeZone (parseInt(childMin.key));
+
+                var puntajeActual  = childMin.val();
+                obj.puntaje = puntajeActual;
+    
+                if(puntajeActual > puntajeAlto){
+                    puntajeAlto = puntajeActual;
+                    nombrePuntajeAlto = nombre;
+                }
+                
+    
+            });
+
+
+            puntajes.push(obj)
+            obj = {}
+        });
+        $("#mejorPuntajeSpace").empty();
+        $("#mejorPuntajeSpace").append(nombrePuntajeAlto + " " + puntajeAlto);
+        makeTableSpace(puntajes)
+
+        
+    });
+}
+
 function makeTable(obj) {
 
 
@@ -71,6 +121,24 @@ function makeTable(obj) {
     }
 
     $("#tableBankHeroData").append(table);
+}
+
+function makeTableSpace(obj) {
+
+
+
+    $("#tableSpaceData").empty();
+    var table = '';
+
+    for (let i = 0; i < obj.length; i++) {
+        table = table.concat('<tr>')
+        table = table.concat('<td>' + obj[i].nombre + '</td>')
+        table = table.concat('<td>' + obj[i].fecha + '</td>')
+        table = table.concat('<td>' + obj[i].puntaje + '</td>')
+        table = table.concat('</tr>')
+    }
+
+    $("#tableSpaceData").append(table);
 }
 
 
