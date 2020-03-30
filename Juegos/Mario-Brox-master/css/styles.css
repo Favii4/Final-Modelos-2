@@ -1,0 +1,274 @@
+#menu p{
+  font-family: 'Bangers';
+}
+body{
+  background-image: url('../imgs/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e9b02f;
+}
+h1{
+  font-family: 'Bangers', cursive;
+  color: red;
+  text-align: center;
+  font-size: 4em;
+	text-shadow: 3px 3px 0px #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.smartphone {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+  box-shadow: 5px 5px 0px gray;
+  borde
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 300px;
+  height: 600px;
+  background: white;
+}
+
+#menosVolumen{
+  height: 30px;
+  width: 80px;
+  float: left;
+  position: relative;
+  left: 26px;
+  top: 10px;
+  background-image: url(../imgs/texturaboton.png);
+  background-size: contain;
+  border: 0px black solid;
+  font-size: 1em;
+  color: white;
+  font-weight: bolder;
+}
+#masVolumen{
+  height: 30px;
+  width: 80px;
+  float: right;
+  position: relative;
+  right: 26px;
+  top: 10px;
+  background-image: url(../imgs/texturaboton.png);
+  background-size: contain;
+  border: 0px black solid;
+  font-size: 1em;
+  color: white;
+  font-weight: bolder;
+}
+
+#menu{
+    position: absolute;
+    height: 600px;
+    width: 300px;
+    background-image: url('../imgs/fondo.jpg');
+    visibility: visible;
+    text-align: center;
+}
+
+.botonesmenu{
+margin-top: 50px;
+}
+
+.botonesmenu > input{
+  width: 200px;
+  height: 60px;
+  margin-top: 50px;
+  background-color: #fdcb1c;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px #888888;
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-size: 1.6em;
+  color: white;
+}
+
+#final{
+    position: absolute;
+    height: 600px;
+    width: 300px;
+    background-image: url('../imgs/fondo.jpg');
+    visibility: hidden;
+    text-align: center;
+    opacity: 0;
+}
+
+#final > img {
+  opacity: 1;
+  width: 80%;
+}
+
+#final > p{
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Bangers';
+  position: absolute;
+  float: left;
+  bottom:2px;
+  left: 25px;
+}
+
+#top{
+  margin: 10px auto 5px auto;
+  width: 80%;
+  font-family: 'Bangers';
+  text-align: center;
+  border: 2px #fdcb1c solid;
+  border-radius: 10px;
+  background-color: #fdcb1c;
+}
+#top > h2{
+  font-size: 25px;
+  margin-bottom: 5px;
+  font-stretch: expanded;
+}
+#top > h3{
+  font-size: 20px;
+  font-stretch: expanded;
+  margin-top: 5px;
+}
+
+#top>table{
+  border: 2px black solid;
+  margin: 5px auto 10px auto;
+  padding: 0;
+  width: 80%;
+}
+
+#top>table tr:nth-child(1) td {
+  border-bottom: 2px solid black;
+  padding: 0px;
+}
+
+#nick{
+  background-color: #fdcb1c;
+  border: 3px solid #e9b02f;
+  border-radius: 10px 0px 0px 10px;
+  margin: 0px 0px 20px 10px;
+  width: 80px;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Bangers';
+  font-size: 20px;
+
+}
+
+a{
+  background-color: #fdcb1c;
+  border: 3px solid #e9b02f;
+  border-radius: 0px 10px 10px 0px;
+  margin: 0px 0px 0px -6px;
+  padding: 8px;
+  background-color: #00ae34;
+  font-family: 'Bangers';
+  font-size: 20px;
+}
+#confirmarnick{
+  background-color: #fdcb1c;
+  border: 3px solid #e9b02f;
+  border-radius: 0px 10px 10px 0px;
+  margin: 0px 0px 0px -6px;
+  padding: 10px;
+  background-color: #00ae34;
+  font-family: 'Bangers';
+  font-size: 20px;
+}
+
+#lvlup{
+  position: absolute;
+  z-index: 1;
+  float: left;
+  opacity: 0;
+  bottom: 10px;
+  left: 50px;
+  width: 200px;
+}
+
+#controlesbox{
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  float: left;
+  top: 150px;
+  background-color: #1d7b21d1;
+  margin: 0 5px 0 5px;
+  border-radius: 15px;
+  padding: 20px;
+  font-family: 'Bangers';
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  border: 5px solid #226621;
+}
+
+#controlesbox h2{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: red;
+}
+
+#controlesbox table{
+  margin: 3px auto 3px auto;
+}
+
+#controlesbox p{
+  margin: 2px auto 5px auto;
+}
+
+.tecla{
+  width: 35px;
+  background-color: black;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 15px;
+  margin: 15px;
+
+}
+
+#cerrar{
+  color: red;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  float: right;
+  right: 10px;
+  top: 0px;
+}

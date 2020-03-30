@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8" />
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../../js/initFirebase.js"></script>
+	<script src="js/crudFirebase.js"></script>
+
+	<link rel="stylesheet" href="./css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+	<script type="text/javascript" src="./js/mario.js"></script>
+	<title>Mario Bros</title>
+</head>
+
+<body>
+	<div class="smartphone">
+		<div class="content">
+			<img src="./imgs/levelup.gif" id="lvlup" alt="Level Up">
+
+			<div id="menu">
+				<br><br><br>
+				<h1>Mario Bros</h1>
+				<div class="botonesmenu"> <br><br>
+					<input type="button" id="inicio" value="INICIAR">
+				</div>
+				<div id="top">
+					<br> 
+					<input type="text" placeholder="Ingresa tu nombre " id='nombreUsuario' >
+					<input type="submit" id='confirmarnick' value="Enviar" onclick="guardarNombreUsuario()"> <br>
+				</div>
+			</div>
+
+			<div id="final">
+				<img src="./imgs/mariogameover.gif" alt="GAME OVER">
+				
+				<div id="top">
+					<h2>Puntaje: <strong id="puntos"></strong></h2>	<br>
+					<a class="button alt" onclick="insertarPuntaje()">Guardar puntaje</a> <br><br>
+				</div>
+
+				<p>Pulsa 'R' para volver a jugar</p> <br>
+				<a href="../../dash.html" class="button alt">Regresar a juegos friv UD</a>
+			</div>
+
+			<canvas id="lienzo" width="300" height="600">
+
+			</canvas>
+			<input type="button" id="menosVolumen" value="▬">
+			<input type="button" id="masVolumen" value="✚">
+		</div>
+	</div>
+
+</body>
+
+</html>
