@@ -5,11 +5,11 @@ Plataforma de juegos "Juegos Friv UD"
 - Fabian Alexander Franco Quiroga - 20152020048 
 - Diego Alejandro Malagón - 20162020098
 
+### Ejecucion y requerimientos
+- Es necesario instalar una extencion en nuestro "Visual Studio Code" llamada "Live Server", la cual nos permite ejecutar correctamente los scripts y demas vistas que necesite el proyecto. Al descargar esta extension, desde el "Visual Studio Code" tenemos que darle click derecho al archivo "dash.html" y lo abrimos con el live server, de esta forma ya estaria iniciaria su ejecucion.
+
 ### Lenguajes 
 El proyecto se desarrollo completamente en JavaScript junto con la ayuda de Firebase, esta nos permite el uso y la interpretacion de los datos del proyecto 
-
-### Requerimientos
-Es necesario instalar un Live Server, el cual nos permite ejercutar correctamente los scripts y demas vistas que necesite el proyecto, esto debido a que los navegadores bloquean algunos de estos
 
 ### Paradigmas
 - Paradigma imperativo: Se utiliza javascript para definir las funciones del proyecto y utilizar los valores del mismo.
