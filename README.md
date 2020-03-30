@@ -3,6 +3,7 @@ Plataforma de juegos "Juegos Friv UD"
 
 ### Integrantes
 - Fabian Alexander Franco Quiroga - 20152020048 
+- Diego Alejandro Malagon
 
 ### Ejecucion y requerimientos
 - Es necesario instalar una extencion en nuestro "Visual Studio Code" llamada "Live Server", la cual nos permite ejecutar correctamente los scripts y demas vistas que necesite el proyecto. Al descargar esta extension, desde el "Visual Studio Code" tenemos que darle click derecho al archivo "dash.html" y lo abrimos con el live server, de esta forma ya estaria iniciaria su ejecucion.
